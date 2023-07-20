@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+// use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,13 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('admin', function() {
+    return 'Hi, Admin';
+})->middleware('role:admin');
+Route::get('user', function() {
+    return 'Hi, User';
+})->middleware('role:user');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
