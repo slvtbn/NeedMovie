@@ -16,7 +16,7 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/', '/prototype/login');
+Route::redirect('/', '/login');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
