@@ -21,8 +21,8 @@ class MovieTableSeeder extends Seeder
                 'slug' => 'the-shashank-redemption',
                 'category' => 'Drama',
                 'video_url' => 'https://www.youtube.com/watch?v=a3OtNRvLa0E&t=4s', 
-                'thumbnail' => 'https://unsplash.com/photos/tloFnD-7EpI',
-                'rating' => 9.3,
+                'thumbnail' => "https://wallpapercave.com/dwp1x/wp2014258.jpg",
+                'rating' => 4.3,
                 'is_featured' => 1,
             ],
             [
@@ -30,8 +30,8 @@ class MovieTableSeeder extends Seeder
                 'slug' => 'the-godfather',
                 'category' => 'Drama',
                 'video_url' => 'https://www.youtube.com/watch?v=a3OtNRvLa0E&t=4s', 
-                'thumbnail' => 'https://unsplash.com/photos/tloFnD-7EpI',
-                'rating' => 9.2,
+                'thumbnail' => 'https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2022/07/14/4186926147.jpg',
+                'rating' => 4.2,
                 'is_featured' => 0,
             ],
             [
@@ -39,8 +39,8 @@ class MovieTableSeeder extends Seeder
                 'slug' => 'the-godfather-part-ii',
                 'category' => 'Drama',
                 'video_url' => 'https://www.youtube.com/watch?v=a3OtNRvLa0E&t=4s', 
-                'thumbnail' => 'https://unsplash.com/photos/tloFnD-7EpI',
-                'rating' => 9.0,
+                'thumbnail' => 'https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2022/07/29/1812697777.jpg',
+                'rating' => 4.0,
                 'is_featured' => 0,
             ]
         ];
