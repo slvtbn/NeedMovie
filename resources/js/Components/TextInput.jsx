@@ -12,6 +12,7 @@ const TextInput = forwardRef(function TextInput({
     isFocused,
     placeholder,
     isError,
+    // handleOnChange,
     ...props }, ref) {
     const input = ref ? ref : useRef();
 
@@ -31,8 +32,10 @@ const TextInput = forwardRef(function TextInput({
                 }
                 placeholder={placeholder}
                 ref={input}
+                name={name}
                 value={value}
-                defaultValue={defaultValue}
+                required={required}
+                // onChange={(e) => handleOnChange}
             />
         </div>
     );
