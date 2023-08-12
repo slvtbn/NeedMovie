@@ -35,6 +35,7 @@ const TextInput = forwardRef(function TextInput({
                 name={name}
                 value={value}
                 required={required}
+                defaultValue={defaultValue}
                 // onChange={(e) => handleOnChange}
             />
         </div>
