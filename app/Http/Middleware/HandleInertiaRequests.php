@@ -59,7 +59,10 @@ class HandleInertiaRequests extends Middleware
             ],
             'flashMessage' => [
                 'message' => Session::get('message'),
-                'type' => Session::get('type'),
+                'type' => Session::get('type'), 
+            ],
+            'env' => [
+                'MIDTRANS_CLIENTKEY' => env('MIDTRANS_CLIENTKEY')
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [

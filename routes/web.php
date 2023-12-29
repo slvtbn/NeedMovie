@@ -9,6 +9,7 @@ use App\Http\Controllers\User\MovieController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\SubscriptionPlanController;
 use App\Http\Controllers\Admin\MovieController as AdminMovieController;
+use App\Models\SubscriptionPlan;
 
 // use Inertia\Inertia;
 
@@ -22,6 +23,10 @@ use App\Http\Controllers\Admin\MovieController as AdminMovieController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//MIDTRANS ROUTE
+Route::post('midtrans/notification', [SubscriptionPlanController::class, 'midtransCallback']);
+
 Route::redirect('/', '/login');
 
 Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashboard.')->group(function() {
@@ -29,8 +34,8 @@ Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashbo
 
     Route::get('movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show')->middleware('checkUserSubscription:true');
 
-    Route::get('subscription-plan', [SubscriptionPlanController::class, 'index'])->name('subscriptionPlan.index')->middleware('checkUserSubscription:false');;
-    Route::post('subscription-plan/{subscriptionPlan}/user-subscribe', [SubscriptionPlanController::class, 'userSubscribe'])->name('subscriptionPlan.userSubscribe')->middleware('checkUserSubscription:false');;
+    Route::get('subscription-plan', [SubscriptionPlanController::class, 'index'])->name('subscriptionPlan.index')->middleware('checkUserSubscription:false');
+    Route::post('subscription-plan/{subscriptionPlan}/user-subscribe', [SubscriptionPlanController::class, 'userSubscribe'])->name('subscriptionPlan.userSubscribe')->middleware('checkUserSubscription:false');
 });
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.dashboard.')->group(function() {
@@ -49,7 +54,7 @@ Route::prefix('prototype')->name('prototype.')->group(function() {
 
     Route::get('/dashboard', function() {
         return Inertia::render('Prototype/Dashboard');
-    })->name('dashboard');
+    })->name('dashboard');  
 
     Route::get('/subscriptionPlan', function() {
         return Inertia::render('Prototype/SubscriptionPlan');
